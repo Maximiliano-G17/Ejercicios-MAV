@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Lista de Personas</title>
+</head>
+<body>
+	<table class="table">
+	  <thead class="thead-dark">
+	    <tr>
+	    	<th>RUT</th>
+	      	<th>Name</th>
+			<th>Surname</th>
+			<th>Current Account</th>
+			<th>Edit</th>
+			<th>Delete</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<tr th:each="persona:${listaDePersonasFisicas}">
+			<th scope="row" th:text="${persona.RUT}"></th>
+			<td th:text="${persona.name}"></td>
+			<td th:text="${persona.surname}"></td>
+			<td th:text="${persona.currentAccount}"></td>
+			<td>
+				<a th:href="@{/personas/update/} + ${persona.RUT}" th:text="Edit"></a>
+			</td>
+			<td>
+				<a th:href="@{/personas/delete/} + ${persona.RUT}" th:text="Delete"
+					onclick="return confirm('seguro de eliminar el registo')"></a>
+			</td>
+		</tr>
+	  </tbody>
+	</table>
+	<table class="table">
+	  <thead class="thead-dark">
+	    <tr>
+	    	<th>RUT</th>
+	      	<th>businessName</th>
+			<th>foundationYear</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<tr th:each="personaJuridica:${listaDePersonasJuridicas}">
+			<th scope="row" th:text="${persona.RUT}"></th>
+			<td th:text="${personaJuridica.businessName}"></td>
+			<td th:text="${personaJuridica.foundationYear}"></td>
+			<td>
+				<a th:href="@{/personas/update/} + ${persona.RUT}" th:text="Edit"></a>
+			</td>
+			<td>
+				<a th:href="@{/personas/delete/} + ${persona.RUT}" th:text="Delete"
+					onclick="return confirm('seguro de eliminar el registo')"></a>
+			</td>
+		</tr>
+	  </tbody>
+	</table>
+</body>
+</html>

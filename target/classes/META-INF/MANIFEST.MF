@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Built-By: chami
+Build-Jdk: 14.0.2
+Implementation-Title: test-spring-boot-level-1
+Implementation-Version: 0.0.1
+Implementation-Vendor-Id: coop.tecso
+Implementation-URL: https://gitlab.tecso.coop/tecso/test-spring-boot-lev
+ el-1
+Main-Class: coop.tecso.examen.MainApplication
+Created-By: Maven Integration for Eclipse
+Premain-Class: coop.tecso.examen.NopPreMain
+
